@@ -16,4 +16,3 @@ require('./utils/handlers/editHandles')(client, message);
 })
 
 client.login(process.env.TOKEN);
-});
