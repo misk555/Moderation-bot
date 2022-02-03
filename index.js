@@ -1,6 +1,5 @@
 const { Client } = require('discord.js');
 const client = new Client();
-const { token } = require('./config/bot.json')
 
 require('./utils/defines')(client);
 require('./utils/structure/registery')(client);
@@ -16,6 +15,5 @@ client.on('messageUpdate', (o, message) => {
 require('./utils/handlers/editHandles')(client, message);
 })
 
-client.login(token).catch(() => {
-    console.log('Incorrect token given!! Please make sure to go to the config folder and check all files and fill them out')
+client.login(process.env.TOKEN);
 });
